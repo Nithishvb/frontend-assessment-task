@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logo Animation</title>
+  <style>
+    body, html {
+      height: 100vh;
+      width: 100vw;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+    }
+    .logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.5s ease;
+    }
+    .logo > img {
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo" id="logo">
+    <img src="./images/wizaart-img.56787174 (1).gif" alt="Logo">
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('click', function(event) {
+        const logo = document.getElementById('logo');
+        logo.style.transitionDuration = '6s';
+        logo.style.left = event.clientX + "px";
+        logo.style.top = event.clientY + "px";
+      });
+    });
+  </script>
+</body>
+</html>
