@@ -36,7 +36,6 @@
       document.addEventListener('click', function(event) {
         const logo = document.getElementById('logo');
         const logoRect = logo.getBoundingClientRect();
-        const logoCenterX = logoRect.left;
         if(event.clientX > logoRect.left){
             logo.style.transform = 'scaleX(-1)';
         }else{
