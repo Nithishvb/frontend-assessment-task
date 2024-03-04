@@ -19,7 +19,6 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      transition: all 0.5s ease;
     }
     .logo > img {
       width: 100px;
@@ -36,6 +35,14 @@
     document.addEventListener('DOMContentLoaded', function() {
       document.addEventListener('click', function(event) {
         const logo = document.getElementById('logo');
+        const logoRect = logo.getBoundingClientRect();
+        const logoCenterX = logoRect.left;
+        if(event.clientX > logoRect.left){
+            logo.style.transform = 'scaleX(-1)';
+        }else{
+            logo.style.transform = 'scaleX(1)';
+        }
+        logo.style.transitionProperty = 'left, top';
         logo.style.transitionDuration = '6s';
         logo.style.left = event.clientX + "px";
         logo.style.top = event.clientY + "px";
